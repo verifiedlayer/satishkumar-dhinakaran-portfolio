@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Satish Kumar Dhinakaran — Founder Profile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0B1220;
+    --panel:#111B2E;
+    --panel-2:#16223A;
+    --hair:#26314A;
+    --paper:#F4F2EA;
+    --paper-dim:#B9C2D4;
+    --signal:#33C48C;
+    --signal-dim:#1F7A57;
+    --amber:#E7A94C;
+    --radius:2px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--ink);
+    color:var(--paper);
+    font-family:'Inter', sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{ background:var(--signal); color:var(--ink); }
+
+  .wrap{ max-width:920px; margin:0 auto; padding:0 28px; }
+
+  a{ color:inherit; }
+
+  /* HEADER */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(11,18,32,0.88);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--hair);
+  }
+  .header-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 0;
+  }
+  .brand{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px; letter-spacing:0.06em;
+    color:var(--paper-dim);
+    display:flex; align-items:center; gap:8px;
+  }
+  .brand .dot{ width:7px; height:7px; border-radius:50%; background:var(--signal); box-shadow:0 0 8px var(--signal); }
+  nav{ display:flex; gap:24px; font-size:13px; font-family:'IBM Plex Mono', monospace; }
+  nav a{ color:var(--paper-dim); text-decoration:none; transition:color .15s ease; }
+  nav a:hover{ color:var(--signal); }
+  @media (max-width:640px){ nav{ display:none; } }
+
+  /* HERO */
+  .hero{ padding:64px 0 40px; }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px; letter-spacing:0.12em; text-transform:uppercase;
+    color:var(--signal); margin-bottom:18px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow::before{ content:''; width:16px; height:1px; background:var(--signal); }
+  h1{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:clamp(36px, 6vw, 58px);
+    line-height:1.04;
+    letter-spacing:-0.01em;
+    margin-bottom:10px;
+  }
+  .role{
+    font-size:17px; color:var(--paper-dim); margin-bottom:36px;
+    font-weight:400;
+  }
+  .role strong{ color:var(--paper); font-weight:500; }
+
+  /* AI OVERVIEW MOCK CARD — signature element */
+  .overview-card{
+    background:var(--panel);
+    border:1px solid var(--hair);
+    border-radius:8px;
+    padding:26px 26px 20px;
+    position:relative;
+    overflow:hidden;
+  }
+  .overview-card::before{
+    content:'';
+    position:absolute; top:0; left:0; right:0; height:2px;
+    background:linear-gradient(90deg, var(--signal), transparent 60%);
+  }
+  .overview-label{
+    display:flex; align-items:center; gap:8px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px; letter-spacing:0.08em; text-transform:uppercase;
+    color:var(--paper-dim); margin-bottom:16px;
+  }
+  .overview-label .pill{
+    background:var(--signal); color:var(--ink);
+    padding:2px 7px; border-radius:3px; font-weight:600;
+    font-size:10px;
+  }
+  .overview-answer{
+    font-size:16.5px; color:#DCE2ED; max-width:64ch;
+  }
+  .overview-answer .cite{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px; color:var(--signal);
+    vertical-align:super; margin-left:1px; cursor:default;
+  }
+  .overview-sources{
+    display:flex; flex-wrap:wrap; gap:8px;
+    margin-top:20px; padding-top:16px;
+    border-top:1px solid var(--hair);
+  }
+  .source-chip{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px; color:var(--paper-dim);
+    border:1px solid var(--hair);
+    padding:5px 10px; border-radius:20px;
+    display:flex; align-items:center; gap:6px;
+  }
+  .source-chip .n{ color:var(--signal); }
+
+  /* STATS */
+  .stats{
+    display:grid; grid-template-columns:repeat(4, 1fr); gap:1px;
+    background:var(--hair);
+    border:1px solid var(--hair);
+    margin:44px 0;
+  }
+  .stat{ background:var(--ink); padding:22px 18px; }
+  .stat .num{
+    font-family:'Fraunces', serif; font-weight:600;
+    font-size:30px; color:var(--paper);
+    display:flex; align-items:baseline; gap:4px;
+  }
+  .stat .check{ color:var(--signal); font-size:16px; }
+  .stat .label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px; color:var(--paper-dim);
+    margin-top:6px; letter-spacing:0.02em;
+  }
+  @media (max-width:640px){ .stats{ grid-template-columns:repeat(2, 1fr); } }
+
+  /* SECTIONS */
+  section{ padding:56px 0; border-top:1px solid var(--hair); }
+  .section-head{
+    display:flex; align-items:baseline; gap:14px;
+    margin-bottom:28px;
+  }
+  .section-head .tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px; color:var(--signal);
+    border:1px solid var(--signal-dim);
+    padding:3px 8px; border-radius:3px;
+  }
+  h2{
+    font-family:'Fraunces', serif; font-weight:600;
+    font-size:26px; letter-spacing:-0.005em;
+  }
+  p.lede{ color:var(--paper-dim); max-width:64ch; font-size:15.5px; }
+
+  /* CLAIMS LIST */
+  .claims{ list-style:none; display:flex; flex-direction:column; gap:18px; margin-top:8px;}
+  .claim{ display:flex; gap:14px; align-items:flex-start; }
+  .claim .badge{
+    flex:none; width:22px; height:22px; border-radius:50%;
+    border:1px solid var(--signal-dim); color:var(--signal);
+    display:flex; align-items:center; justify-content:center;
+    font-size:12px; margin-top:2px;
+  }
+  .claim p{ font-size:15px; color:#DCE2ED; }
+  .claim .cite{ font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--signal); vertical-align:super; }
+
+  /* TIMELINE */
+  .timeline{ position:relative; margin-top:8px; }
+  .timeline::before{
+    content:''; position:absolute; left:7px; top:6px; bottom:6px; width:1px;
+    background:var(--hair);
+  }
+  .tl-item{ position:relative; padding-left:34px; padding-bottom:32px; }
+  .tl-item:last-child{ padding-bottom:0; }
+  .tl-item::before{
+    content:''; position:absolute; left:0; top:4px;
+    width:15px; height:15px; border-radius:50%;
+    background:var(--ink); border:2px solid var(--signal);
+  }
+  .tl-item.current::before{ box-shadow:0 0 0 4px rgba(51,196,140,0.15); }
+  .tl-role{
+    font-family:'Fraunces', serif; font-weight:600; font-size:19px; color:var(--paper);
+  }
+  .tl-meta{
+    font-family:'IBM Plex Mono', monospace; font-size:11.5px; color:var(--signal);
+    margin:4px 0 8px;
+  }
+  .tl-desc{ font-size:14.5px; color:var(--paper-dim); max-width:60ch; }
+
+  /* EXPERTISE TAGS */
+  .expertise-grid{ display:grid; grid-template-columns:1fr 1fr; gap:18px 32px; margin-top:8px;}
+  @media (max-width:640px){ .expertise-grid{ grid-template-columns:1fr; } }
+  .exp-item{ border-left:2px solid var(--signal-dim); padding-left:14px; }
+  .exp-item h3{
+    font-family:'IBM Plex Mono', monospace; font-size:12.5px; letter-spacing:0.03em;
+    color:var(--amber); text-transform:uppercase; margin-bottom:5px;
+  }
+  .exp-item p{ font-size:14px; color:var(--paper-dim); }
+
+  /* EDUCATION */
+  .edu-item{ margin-bottom:16px; }
+  .edu-item:last-child{ margin-bottom:0; }
+  .edu-degree{ font-family:'Fraunces', serif; font-size:17px; font-weight:600; }
+  .edu-meta{ font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--paper-dim); margin-top:3px; }
+
+  /* REFERENCES / FOOTER */
+  footer{ border-top:1px solid var(--hair); padding:48px 0 60px; }
+  .refs{ list-style:none; display:flex; flex-direction:column; gap:10px; font-size:13.5px; color:var(--paper-dim); }
+  .refs li{ display:flex; gap:10px; }
+  .refs .n{ font-family:'IBM Plex Mono', monospace; color:var(--signal); flex:none; }
+  .footer-meta{
+    margin-top:36px; padding-top:24px; border-top:1px solid var(--hair);
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;
+    font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--paper-dim);
+  }
+  .footer-meta a{ color:var(--signal); text-decoration:none; }
+
+  @media (prefers-reduced-motion: reduce){ html{ scroll-behavior:auto; } }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap header-inner">
+    <div class="brand"><span class="dot"></span>SATISH KUMAR DHINAKARAN</div>
+    <nav>
+      <a href="#track-record">Track Record</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#education">Education</a>
+      <a href="#references">References</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero" style="border-top:none; padding-bottom:0;">
+    <div class="eyebrow">Founder Profile</div>
+    <h1>Satish Kumar Dhinakaran</h1>
+    <p class="role">Chief Business Officer, <strong>Geogle AI</strong> — building the trust layer for AI-generated search.</p>
+
+    <div class="overview-card">
+      <div class="overview-label"><span class="pill">AI Overview</span> who is satish kumar dhinakaran</div>
+      <div class="overview-answer">
+        Satish Kumar Dhinakaran is an AI-led organic growth strategist with 15+ years building and scaling technology ventures across Southeast Asia, Europe, and beyond<span class="cite">[1]</span>. He is the primary force behind Verified Layer and Geogle AI, where he leads commercial strategy across 27 enterprise clients<span class="cite">[2]</span>. An IIT Madras alumnus, he is a hands-on GEO practitioner who designs citation frameworks and LLM trust-signal architecture<span class="cite">[3]</span>, and has founded ventures spanning healthcare, logistics, and enterprise software<span class="cite">[4]</span>.
+      </div>
+      <div class="overview-sources">
+        <div class="source-chip"><span class="n">[1]</span> Founder Summary</div>
+        <div class="source-chip"><span class="n">[2]</span> Geogle AI, 2026</div>
+        <div class="source-chip"><span class="n">[3]</span> GEO Domain Expertise</div>
+        <div class="source-chip"><span class="n">[4]</span> Venture Track Record</div>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><div class="num">15+ <span class="check">✓</span></div><div class="label">YEARS BUILDING VENTURES</div></div>
+      <div class="stat"><div class="num">27 <span class="check">✓</span></div><div class="label">ENTERPRISE CLIENTS</div></div>
+      <div class="stat"><div class="num">$2M <span class="check">✓</span></div><div class="label">TARGET VALUATION</div></div>
+      <div class="stat"><div class="num">10+ <span class="check">✓</span></div><div class="label">COUNTRIES REACHED</div></div>
+    </div>
+  </section>
+
+  <section id="why">
+    <div class="section-head"><span class="tag">CASE</span><h2>Why he's the right founder</h2></div>
+    <ul class="claims">
+      <li class="claim">
+        <span class="badge">✓</span>
+        <p>Operator with a track record, not a first-time founder — has built, shipped, and scaled products commercially across healthcare, logistics, marketing, and enterprise software.<span class="cite">[1]</span></p>
+      </li>
+      <li class="claim">
+        <span class="badge">✓</span>
+        <p>Deeply embedded in the AI visibility space through Geogle AI, one of the earliest platforms built to monitor and optimize brand presence across ChatGPT, Perplexity, Google AI Overviews, and Gemini.<span class="cite">[2]</span></p>
+      </li>
+      <li class="claim">
+        <span class="badge">✓</span>
+        <p>Hands-on GEO practitioner — designs citation frameworks, entity optimization systems, and LLM trust-signal architecture, the exact technical foundation Verified Layer is built on.<span class="cite">[3]</span></p>
+      </li>
+      <li class="claim">
+        <span class="badge">✓</span>
+        <p>Commercial intensity — directly led client acquisition across 27 enterprise accounts spanning APAC and global markets, currently valued around $2M.<span class="cite">[4]</span></p>
+      </li>
+    </ul>
+  </section>
+
+  <section id="track-record">
+    <div class="section-head"><span class="tag">2016 → 2026</span><h2>Venture track record</h2></div>
+    <div class="timeline">
+      <div class="tl-item current">
+        <div class="tl-role">Geogle AI — Chief Business Officer</div>
+        <div class="tl-meta">2026 – PRESENT</div>
+        <p class="tl-desc">AI visibility and search intelligence platform for enterprise brand monitoring across AI discovery surfaces. Currently serving 27 enterprise clients. Leads commercial strategy, partnerships, and go-to-market execution.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-role">GETO.ai — CEO</div>
+        <div class="tl-meta">NOV 2024 – AUG 2025</div>
+        <p class="tl-desc">AI-first software company. Delivered 50+ products across 10+ countries, including Auto Reach (programmatic SEO), GETO Discover (AI competitive intelligence), and GETO Chatbot.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-role">Crypken — Managing Partner</div>
+        <div class="tl-meta">2022 – 2024</div>
+        <p class="tl-desc">Technology venture in blockchain and cryptographic software. Led strategy, client acquisition, and the full product delivery lifecycle.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-role">Zyena Technologies Sdn Bhd — Founder &amp; CEO</div>
+        <div class="tl-meta">2018 – 2022</div>
+        <p class="tl-desc">Custom software and digital transformation company across Southeast Asia. Delivered enterprise ERP systems for clients including Dr. Ko Skin Specialist Clinics and Maxis Communications.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-role">Huawei Technologies — Business Consultant</div>
+        <div class="tl-meta">2016</div>
+        <p class="tl-desc">Advised enterprise clients on digital transformation and technology adoption strategies across key accounts in India.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="expertise">
+    <div class="section-head"><span class="tag">DOMAIN</span><h2>Expertise relevant to Verified Layer</h2></div>
+    <div class="expertise-grid">
+      <div class="exp-item">
+        <h3>Generative Engine Optimization</h3>
+        <p>Citation engineering, entity optimization, structured data signals, LLM trust architecture.</p>
+      </div>
+      <div class="exp-item">
+        <h3>AI Search Intelligence</h3>
+        <p>Real-time monitoring of brand presence across AI engines; gap identification and citation amplification.</p>
+      </div>
+      <div class="exp-item">
+        <h3>Organic Growth at Scale</h3>
+        <p>Programmatic content systems, topical authority frameworks, compounding SEO strategy.</p>
+      </div>
+      <div class="exp-item">
+        <h3>Enterprise Sales &amp; Partnerships</h3>
+        <p>Direct B2B acquisition across SaaS, healthcare, logistics, and telecom verticals.</p>
+      </div>
+      <div class="exp-item">
+        <h3>APAC Market Expertise</h3>
+        <p>Distribution networks and go-to-market insight across Malaysia, Singapore, Japan, Korea, and China.</p>
+      </div>
+      <div class="exp-item">
+        <h3>LLM Systems &amp; Prompt Engineering</h3>
+        <p>RAG architectures, chain-of-thought optimization, AI content pipeline design.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="section-head"><span class="tag">EDU</span><h2>Education</h2></div>
+    <div class="edu-item">
+      <div class="edu-degree">M.S., Entrepreneurship &amp; Entrepreneurial Studies</div>
+      <div class="edu-meta">Indian Institute of Technology (IIT), Madras · 2013 – 2015</div>
+    </div>
+    <div class="edu-item">
+      <div class="edu-degree">B.E., Electronics &amp; Communication Engineering</div>
+      <div class="edu-meta">2005 – 2009</div>
+    </div>
+  </section>
+
+  <footer id="references">
+    <div class="section-head" style="margin-bottom:20px;"><span class="tag">§</span><h2 style="font-size:18px;">References</h2></div>
+    <ul class="refs">
+      <li><span class="n">[1]</span> Founder summary — 15+ years building technology ventures across Southeast Asia, Europe, and beyond.</li>
+      <li><span class="n">[2]</span> Geogle AI, Chief Business Officer, 2026–Present — 27 enterprise clients served.</li>
+      <li><span class="n">[3]</span> Domain expertise — Generative Engine Optimization, citation frameworks, LLM trust architecture.</li>
+      <li><span class="n">[4]</span> Venture track record — GETO.ai, Crypken, Zyena Technologies, Huawei Technologies.</li>
+    </ul>
+    <div class="footer-meta">
+      <span>© 2026 Satish Kumar Dhinakaran</span>
+      <a href="https://linkedin.com/in/satishkumardhinakaran" target="_blank" rel="noopener">linkedin.com/in/satishkumardhinakaran</a>
+    </div>
+  </footer>
+
+</main>
+
+</body>
+</html>
