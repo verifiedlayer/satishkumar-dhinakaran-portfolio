@@ -63,31 +63,6 @@ const NavBar = () => {
     >
       <div className="navbar flex justify-between mx-auto content">
         <div className="flex items-center justify-between">
-          <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h8m-8 6h16"
-                />
-              </svg>
-            </div>
-            <ul
-              tabIndex={0}
-              className={`menu menu-lg dropdown-content rounded-box z-1 mt-3 w-lvw p-2 shadow font-semibold flex-nowrap bg-white text-black`}
-            >
-              {menu}
-            </ul>
-          </div>
-
           <Link
             href="#introduction"
             to={`introduction`}
@@ -116,6 +91,13 @@ const NavBar = () => {
                 <FontAwesomeIcon icon={faPhone} className="text-sm sm:text-base" />
               </span>
               +91 88703 40888
+            </a>
+            <a
+              href="tel:+918870340888"
+              aria-label="Phone"
+              className="lg:hidden flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#EDD8FF80] text-picto-primary hover:bg-picto-primary hover:text-white transition-colors"
+            >
+              <FontAwesomeIcon icon={faPhone} className="text-sm sm:text-base" />
             </a>
             <a
               href="mailto:sathishkumar.official@gmail.com"
